@@ -1,3 +1,4 @@
+import 'package:currency_exchange_flutter/ui/home/widgets/converted_currency_list_view.dart';
 import 'package:currency_exchange_flutter/ui/home/widgets/currency_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +26,12 @@ class HomeView extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(left: 16.0, top: 16.0, right: 16.0),
-          child: Column(children: [CurrencyRow()]),
+          child: Column(
+              children: [
+                CurrencyRow(),
+                ConvertedCurrencyListView(),
+              ],
+          ),
         ),
       ),
     );

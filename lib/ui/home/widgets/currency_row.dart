@@ -9,7 +9,8 @@ class CurrencyRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(
+    return BlocSelector<HomeBloc, HomeState, String>(
+      selector: (state) => state.selectedBase,
       builder: (context, state) {
         return Row(
           children: [
@@ -26,7 +27,7 @@ class CurrencyRow extends StatelessWidget {
             Flexible(
               flex: 1,
               child: Text(
-                state.selectedBase,
+                state,
                 style: Theme.of(context).textTheme.displayMedium,
               ),
             ),
